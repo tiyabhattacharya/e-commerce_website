@@ -1,0 +1,302 @@
+[
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "title": "Wireless Headphones",
+      "price": 150.0,
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "category": "Electronics",
+      "image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+      "title": "Gaming Laptop",
+      "price": 1200.0,
+      "description": "High-performance laptop for gaming and productivity.",
+      "category": "Electronics",
+      "image_url": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+      "title": "Smartphone X",
+      "price": 899.0,
+      "description": "Latest smartphone with 5G connectivity and amazing camera.",
+      "category": "Electronics",
+      "image_url": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 4,
+    "fields": {
+      "title": "Bluetooth Speaker",
+      "price": 79.99,
+      "description": "Portable bluetooth speaker with excellent sound quality.",
+      "category": "Electronics",
+      "image_url": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 5,
+    "fields": {
+      "title": "Smart Watch Pro",
+      "price": 299.0,
+      "description": "Fitness tracking smartwatch with heart rate monitor.",
+      "category": "Electronics",
+      "image_url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 6,
+    "fields": {
+      "title": "Designer T-Shirt",
+      "price": 45.0,
+      "description": "Premium cotton t-shirt with modern design.",
+      "category": "Fashion",
+      "image_url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 7,
+    "fields": {
+      "title": "Denim Jeans",
+      "price": 89.0,
+      "description": "Classic fit denim jeans in blue wash.",
+      "category": "Fashion",
+      "image_url": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 8,
+    "fields": {
+      "title": "Running Shoes",
+      "price": 120.0,
+      "description": "Comfortable running shoes with excellent cushioning.",
+      "category": "Sports",
+      "image_url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 9,
+    "fields": {
+      "title": "Leather Jacket",
+      "price": 299.0,
+      "description": "Genuine leather jacket with classic design.",
+      "category": "Fashion",
+      "image_url": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 10,
+    "fields": {
+      "title": "Yoga Mat",
+      "price": 35.0,
+      "description": "Non-slip yoga mat for comfortable workouts.",
+      "category": "Sports",
+      "image_url": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 11,
+    "fields": {
+      "title": "Coffee Maker",
+      "price": 89.99,
+      "description": "Programmable coffee maker with 12-cup capacity.",
+      "category": "Home",
+      "image_url": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 12,
+    "fields": {
+      "title": "Air Purifier",
+      "price": 199.0,
+      "description": "HEPA filter air purifier for clean indoor air.",
+      "category": "Home",
+      "image_url": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 13,
+    "fields": {
+      "title": "Table Lamp",
+      "price": 45.0,
+      "description": "Modern LED table lamp with adjustable brightness.",
+      "category": "Home",
+      "image_url": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 14,
+    "fields": {
+      "title": "Backpack",
+      "price": 65.0,
+      "description": "Durable backpack with laptop compartment.",
+      "category": "Fashion",
+      "image_url": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 15,
+    "fields": {
+      "title": "Sunglasses",
+      "price": 125.0,
+      "description": "UV protection sunglasses with polarized lenses.",
+      "category": "Fashion",
+      "image_url": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 16,
+    "fields": {
+      "title": "Tennis Racket",
+      "price": 180.0,
+      "description": "Professional tennis racket with carbon frame.",
+      "category": "Sports",
+      "image_url": "https://images.unsplash.com/photo-1617083278295-441a1f149eb9?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 17,
+    "fields": {
+      "title": "Wall Art Print",
+      "price": 55.0,
+      "description": "Abstract wall art print on canvas.",
+      "category": "Home",
+      "image_url": "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 18,
+    "fields": {
+      "title": "Mechanical Keyboard",
+      "price": 149.0,
+      "description": "RGB mechanical keyboard with brown switches.",
+      "category": "Electronics",
+      "image_url": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 19,
+    "fields": {
+      "title": "Winter Coat",
+      "price": 249.0,
+      "description": "Warm winter coat with water-resistant fabric.",
+      "category": "Fashion",
+      "image_url": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400",
+      "sold": false,
+      "is_sale": true,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 20,
+    "fields": {
+      "title": "Dumbbells Set",
+      "price": 89.0,
+      "description": "Adjustable dumbbells set for home workouts.",
+      "category": "Sports",
+      "image_url": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400",
+      "sold": false,
+      "is_sale": false,
+      "date_of_sale": null,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  }
+]

@@ -1,0 +1,249 @@
+/* Reset some default spacing */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 12px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* Container and layout */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+/* Product grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Product card */
+.product-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-card-content {
+  padding: 12px;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  margin: 0 0 5px 0;
+  color: #222;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Buttons */
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #000;
+}
+
+/* Forms */
+input, select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+/* Cart and Orders */
+.cart-item, .order-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.cart-item img, .order-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+  color: #555;
+  margin-top: 40px;
+}
+
+/* Utility */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+
+/* === QUICK UI OVERRIDES (no JS / component changes) ===
+   Fixes:
+   - reduce navbar vertical size
+   - keep navbar content contained (no overflow)
+   - make filter text visible / higher contrast
+   - allow left sidebar filters to scroll when tall
+   Paste at the BOTTOM of src/assets/styles.css
+*/
+
+/* 1) Make navbar compact and prevent overflow */
+.navbar {
+  height: 56px !important;                 /* smaller fixed height */
+  min-height: 56px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Ensure the inner container centers contents and doesn't stretch vertically */
+.navbar .container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+/* Limit nav-links width so the navbar doesn't grow horizontally */
+.nav-links {
+  max-width: 100% !important; /* keeps links inside navbar */
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px;
+  overflow: hidden !important;
+}
+
+/* ellipsize long nav link text rather than expanding navbar */
+.nav-links .nav-link {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* If mobile, shrink navbar further */
+@media (max-width: 720px) {
+  .navbar { height: 52px !important; }
+  .brand-text { display: none !important; } /* show only icon if present */
+}
+
+/* 2) Make filter sidebar scrollable & readable
+   If your filter list grows tall, this keeps it usable.
+*/
+.sidebar, .filter-sidebar {
+  max-height: calc(100vh - 80px);   /* keep it visible under the navbar */
+  overflow: auto;                   /* enable scroll */
+  padding-right: 8px;               /* avoid clipped scrollbars */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improve contrast for filter labels / buttons inside sidebar */
+.filter-sidebar .filter-label,
+.filter-sidebar label,
+.filter-sidebar .category-btn,
+.filter-sidebar .checkbox-label,
+.filter-sidebar .price-inputs,
+.filter-sidebar input,
+.filter-sidebar .form-input {
+  color: #222 !important;           /* dark, readable text */
+  background: transparent !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+
+/* Ensure category buttons wrap nicely and remain visible */
+.filter-sidebar .category-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px;
+  max-width: 100%;
+}
+
+/* If category buttons contain long text, allow wrapping */
+.filter-sidebar .category-btn {
+  white-space: normal !important;
+  text-align: left;
+  padding: 10px 12px !important;
+}
+
+/* 3) Fix input/label overlap (if inputs are narrow) */
+.filter-sidebar input[type="range"],
+.filter-sidebar input[type="text"],
+.filter-sidebar input[type="number"] {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 4) Extra safety: ensure main content doesn't shift under navbar */
+#app, main, .container {
+  padding-top: 8px; /* small spacing so content doesn't stick to top */
+}
+
+/* 5) Optional: reduce most-bought vertical padding if it looked weird */
+.most-bought-section { padding-top: 8px !important; padding-bottom: 16px !important; }
+
+
+
