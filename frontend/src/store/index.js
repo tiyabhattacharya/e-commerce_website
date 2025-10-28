@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 import axios from 'axios'
 
 // Use VITE_API_BASE_URL env var or fallback to localhost for local dev
-axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/'
+axios.defaults.baseURL = 'https://priya2625.pythonanywhere.com'
 axios.defaults.withCredentials = true
 
 function getCookie(name) {
