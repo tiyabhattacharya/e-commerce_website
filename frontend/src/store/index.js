@@ -1,30 +1,22 @@
 import { createStore } from 'vuex'
-import axios from 'axios'
+import api from '@/api.js'
 
-// Use VITE_API_BASE_URL env var or fallback to localhost for local dev
-axios.defaults.baseURL = 'https://priya2625.pythonanywhere.com'
-axios.defaults.withCredentials = true
-
+// CSRF helper function
 function getCookie(name) {
   const match = document.cookie.match(new RegExp('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)'))
   return match ? match.pop() : null
 }
 
-axios.interceptors.request.use(config => {
-  const csrftoken = getCookie('csrftoken')
-  if (csrftoken) {
-    config.headers['X-CSRFToken'] = csrftoken
-  }
-  return config
-}, error => Promise.reject(error))
-
+// Ensure CSRF token by making a GET request if missing
 async function ensureCsrf() {
   try {
     const csrftoken = getCookie('csrftoken')
     if (!csrftoken) {
-      await axios.get('/')
+      await api.get('/')
     }
-  } catch (err) {}
+  } catch (err) {
+    // swallow error silently
+  }
 }
 
 export default createStore({
@@ -56,18 +48,22 @@ export default createStore({
   actions: {
     async login({ commit, dispatch }, { mobile, otp, full_name }) {
       await ensureCsrf()
-      const res = await axios.post('/auth/login/', { mobile, otp, full_name })
+      const res = await api.post('/auth/login/', { mobile, otp, full_name })
       commit('SET_USER', res.data.user)
       await dispatch('fetchCart')
       return res.data
     },
+
     async logout({ commit }) {
       try {
         await ensureCsrf()
-        await axios.post('/auth/logout/')
+        await api.post('/auth/logout/')
         commit('CLEAR_USER')
-      } catch (err) { console.error('Logout failed', err) }
+      } catch (err) {
+        console.error('Logout failed', err)
+      }
     },
+
     async fetchProducts({ commit, state }) {
       commit('SET_LOADING', true)
       const params = {}
@@ -76,47 +72,56 @@ export default createStore({
       if (state.filters.minPrice) params.min_price = state.filters.minPrice
       if (state.filters.maxPrice) params.max_price = state.filters.maxPrice
       if (state.filters.isSale !== null) params.is_sale = state.filters.isSale
-      const res = await axios.get('/products/', { params })
+
+      const res = await api.get('/products/', { params })
       commit('SET_PRODUCTS', res.data)
       commit('SET_LOADING', false)
     },
+
     async fetchMostBought({ commit }) {
-      const res = await axios.get('/products/most_bought/')
+      const res = await api.get('/products/most_bought/')
       commit('SET_MOST_BOUGHT', res.data)
     },
+
     async fetchCart({ commit }) {
-      const res = await axios.get('/cart/')
+      const res = await api.get('/cart/')
       commit('SET_CART', res.data)
     },
+
     async addToCart({ dispatch }, productId) {
       await ensureCsrf()
-      await axios.post('/cart/', { product_id: productId, quantity: 1 })
+      await api.post('/cart/', { product_id: productId, quantity: 1 })
       await dispatch('fetchCart')
     },
+
     async updateCartQuantity({ dispatch }, { id, action }) {
       await ensureCsrf()
-      await axios.post(`/cart/${id}/update_quantity/`, { action })
+      await api.post(`/cart/${id}/update_quantity/`, { action })
       await dispatch('fetchCart')
     },
+
     async removeFromCart({ dispatch }, id) {
       await ensureCsrf()
-      await axios.delete(`/cart/${id}/`)
+      await api.delete(`/cart/${id}/`)
       await dispatch('fetchCart')
     },
+
     async fetchOrders({ commit }) {
-      const res = await axios.get('/orders/')
+      const res = await api.get('/orders/')
       commit('SET_ORDERS', res.data)
     },
+
     async placeOrder({ dispatch }, paymentMode) {
       await ensureCsrf()
-      await axios.post('/orders/', { payment_mode: paymentMode })
+      await api.post('/orders/', { payment_mode: paymentMode })
       await dispatch('fetchCart')
       await dispatch('fetchOrders')
       await dispatch('fetchMostBought')
     },
+
     async cancelOrder({ dispatch }, orderId) {
       await ensureCsrf()
-      await axios.post(`/orders/${orderId}/cancel/`)
+      await api.post(`/orders/${orderId}/cancel/`)
       await dispatch('fetchOrders')
       await dispatch('fetchMostBought')
     }

@@ -6,7 +6,7 @@ import './assets/styles.css'
 import axios from 'axios'
 
 // ✅ Configure axios globally
-axios.defaults.baseURL = 'http://localhost:8000' // change if backend runs elsewhere
+axios.defaults.baseURL = 'https://priya2625.pythonanywhere.com' // change if backend runs elsewhere
 axios.defaults.withCredentials = true // important for sending/receiving cookies (CSRF/session)
 
 // Optionally attach axios to global properties
